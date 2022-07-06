@@ -2,7 +2,22 @@
   "compilerOptions": {
     "composite": true,
     "module": "esnext",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+		"allowSyntheticDefaultImports": true,
+		"resolveJsonModule": true,
+		"esModuleInterop": true
   },
-  "include": ["vite.config.ts"]
+  "include": [
+		"vite.config.ts",
+		"src/**/*",
+		"package.json",
+		"src/**/*.ts",
+		"src/**/*.d.ts",
+		"src/**/*.tsx",
+		"src/**/*.vue",
+		"types/**/*.d.ts",
+		"types/**/*.ts",
+		"build/**/*.ts",
+		"build/**/*.d.ts"
+	]
 }
