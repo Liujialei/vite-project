@@ -3,6 +3,7 @@
     "target": "esnext",
     "useDefineForClassFields": true,
 		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
     "strict": true,
@@ -22,7 +23,7 @@
 			"/#/*": [
 				"types/*"
 			]
-		}
+		},
   },
   "include": [
 		"src/**/*.ts", 
@@ -39,5 +40,8 @@
 	"exclude": [
 		"node_modules",
 		"dist"
-	]
+	],
+	"vueCompilerOptions": {
+		"experimentalDisableTemplateSupport": true
+	},
 }

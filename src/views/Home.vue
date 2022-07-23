@@ -1,13 +1,17 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-// defineProps<{ msg: string }>()
-const count = ref(5)
-console.log(count.value)
-</script>
-
 <template>
-	<el-button type="primary" @click="count++">count is: {{ count }}</el-button>
+	<div>
+		<el-input v-model="massage" placeholder=""></el-input>
+	</div>
 </template>
+
+<script setup lang="ts">
+import { PrimeVueResolver } from 'unplugin-vue-components/resolvers'
+import { ref} from 'vue'
+const massage = ref(null)
+
+
+
+</script>
 
 <style scoped>
 </style>

@@ -2,7 +2,8 @@ import { defineConfig,loadEnv } from 'vite'
 import dayjs from 'dayjs'
 import pkg from './package.json'
 import vue from '@vitejs/plugin-vue'
-import { wrapperEnv } from './build/utils';
+import { wrapperEnv } from './build/utils'
+import { createProxy } from './build/vite/proxy'
 
  
 import { resolve } from 'path'
@@ -25,10 +26,9 @@ export default defineConfig(({ command, mode }) => {
   // Set the third parameter to '' to load all env regardless of the `VITE_` prefix.
   const root = process.cwd();
 	const env = loadEnv(mode, root)
-	console.log('env',env);
 	
 	const viteEnv = wrapperEnv(env)
-	const { VITE_PORT } = viteEnv
+	const { VITE_PORT,VITE_PROXY } = viteEnv
 
   return {
     // vite config
@@ -50,9 +50,10 @@ export default defineConfig(({ command, mode }) => {
 			// https: true,
 			// Listening on all local IPs
 			host: true,
+			open: true,
 			port: VITE_PORT,
-			// // Load proxy configuration from .env
-			// proxy: createProxy(VITE_PROXY),
+			// Load proxy configuration from .env
+			proxy: createProxy(VITE_PROXY),
 		},
 		plugins: [
 			vue(),

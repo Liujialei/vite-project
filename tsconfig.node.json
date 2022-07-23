@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
+		"strict": true,  
     "composite": true,
     "module": "esnext",
     "moduleResolution": "node",
 		"allowSyntheticDefaultImports": true,
 		"resolveJsonModule": true,
-		"esModuleInterop": true
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
   },
   "include": [
 		"vite.config.ts",
@@ -19,5 +21,8 @@
 		"types/**/*.ts",
 		"build/**/*.ts",
 		"build/**/*.d.ts"
-	]
+	],
+		"vueCompilerOptions": {
+			"experimentalDisableTemplateSupport": true
+		},
 }
